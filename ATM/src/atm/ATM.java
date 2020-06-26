@@ -73,7 +73,7 @@ public class ATM {
 		
 		//user menu
 		do	{
-			System.out.printf("Welcome %s,what would you like to do?\n ",theUser.getFirstName());
+			System.out.printf("Welcome %s,what would you like to do?\n",theUser.getFirstName());
 			System.out.println(" 1) Show account transaction history");
 			System.out.println(" 2) Widthdraw");
 			System.out.println(" 3) Deposit");
@@ -104,7 +104,7 @@ public class ATM {
 			break;
 		case 5:
 			//gobble up rest of previous input
-			sc.hasNextLine();
+			sc.nextLine();
 			break;
 		}
 		
@@ -184,6 +184,7 @@ public static void transferFunds(User theUser,Scanner sc)	{
 		}
 	} while(amount<0|| amount >acctBal);
 	
+	
 	//finally,do the transfer
 	theUser.addAcctTransaction(fromAcct,-1*amount,String.format("Transfer to account %s",theUser.getAcctUUID(toAcct)));
 	
@@ -215,6 +216,8 @@ public static void withdrawFunds(User theUser,Scanner sc)	{
 		}while(fromAcct<0||fromAcct>=theUser.numAccounts());
 		acctBal=theUser.getAcctBalance(fromAcct);
 		
+		
+		
 		//get the amount to transfer
 		do	{
 			System.out.printf("Enter the amount to withdraw (max $%.02f): $",acctBal);
@@ -230,7 +233,7 @@ public static void withdrawFunds(User theUser,Scanner sc)	{
 		} while(amount<0|| amount >acctBal);
 		
 		//gobble up rest of previous input
-		sc.hasNextLine();
+		sc.nextLine();
 		
 		//get a memo
 		System.out.print("Enter a memo:");
@@ -271,13 +274,13 @@ public static void depositFunds(User theUser,Scanner sc)	{
 			} while(amount<0);
 			
 			//gobble up rest of previous input
-			//sc.hasNextLine();
+			sc.nextLine();
 			
 			//get a memo
 			System.out.print("Enter a memo:");
 			memo =sc.nextLine();
 			
-			//do the withdraw
+			//do the deposit
 			theUser.addAcctTransaction(toAcct, amount, memo);
 }
 }
