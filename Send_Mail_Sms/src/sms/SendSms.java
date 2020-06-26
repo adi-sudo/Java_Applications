@@ -11,7 +11,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class SendSms {
 	public static void sendSms(String message,String number)	{
 		try	{
-			String apikey="u0Tc2rgQRFP8o76YJWZe3pSszGHdEXmy5tiflvIBMCawnLOUbN4RoWjF06YbT1KJQPvfOxaMC2pHi7gI";
+			String apikey="";
 			String sendId="FSTSMS";
 			
 			message=URLEncoder.encode(message,"UTF-8");
@@ -51,7 +51,7 @@ public class SendSms {
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		
-		SendSms.sendSms("This is sms using java application.By Aditya"+new Date().toLocaleString(),"8081990526,9415131262,9718692780,9654312780");
+		SendSms.sendSms("This is sms using java application."+new Date().toLocaleString(),"Phone numbers");
 		
 	}
 

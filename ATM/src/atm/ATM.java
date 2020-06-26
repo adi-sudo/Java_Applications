@@ -17,6 +17,7 @@ public class ATM {
 		
 		//add a checking account for our user
 		Account newAccount =new Account("Checking",aUser,theBank);
+		aUser.addAccount(newAccount);
 		theBank.addAccount(newAccount);
 		
 		User curUser;
@@ -220,8 +221,11 @@ public static void withdrawFunds(User theUser,Scanner sc)	{
 			amount=sc.nextDouble();
 			if(amount<0)	{
 				System.out.println("Amount must be gerater than zero");
+				
+				
 			} else if(amount>acctBal)	{
 				System.out.printf("Amount must not be grater than\n balance of $%.02f.\n",acctBal);
+				
 			}
 		} while(amount<0|| amount >acctBal);
 		
@@ -259,15 +263,15 @@ public static void depositFunds(User theUser,Scanner sc)	{
 			
 			//get the amount to transfer
 			do	{
-				System.out.printf("Enter the amount to transfer (max $%.02f): $",acctBal);
+				System.out.printf("Enter the amount to deposit (max $%.02f): $",acctBal);
 				amount=sc.nextDouble();
 				if(amount<0)	{
 					System.out.println("Amount must be gerater than zero");
 				} 
-			} while(amount<0|| amount >acctBal);
+			} while(amount<0);
 			
 			//gobble up rest of previous input
-			sc.hasNextLine();
+			//sc.hasNextLine();
 			
 			//get a memo
 			System.out.print("Enter a memo:");

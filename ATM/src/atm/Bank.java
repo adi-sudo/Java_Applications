@@ -36,7 +36,7 @@ public class Bank {
 		//Continue looping until we get a unique ID
 		do	{
 			//generate the number
-			uuid=" ";
+			uuid="";
 			for(int c=0;c<len;c++)	{
 				uuid+=((Integer)rng.nextInt(10)).toString();
 			}

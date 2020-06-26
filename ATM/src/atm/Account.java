@@ -63,9 +63,9 @@ public class Account {
 		
 		//format the summary line,depending on the balance is negative
 		if(balance>=0)	{
-			return String.format("%s : $%0.2f : %s",this.uuid,balance,this.name);
+			return String.format("%s : $%.02f : %s",this.uuid,balance,this.name);
 		} else	{
-			return String.format("%s : $(%0.2f) : %s",this.uuid,balance,this.name);
+			return String.format("%s : $(%.02f) : %s",this.uuid,balance,this.name);
 
 		}
 	}

@@ -109,7 +109,7 @@ public void printAccountSummary()	{
 	
 	System.out.printf("\n\n%s's accounts summary\n",this.firstName);
 	for(int a=0;a<this.account.size();a++)	{
-		System.out.printf("  %d) %s\n",a+1,this.account.get(a).getSummaryLine());
+		System.out.printf("(%d) %s\n",a+1,this.account.get(a).getSummaryLine());
 	}
 	System.out.println();
 }
