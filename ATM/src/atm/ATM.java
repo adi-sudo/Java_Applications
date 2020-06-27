@@ -194,7 +194,7 @@ public static void transferFunds(User theUser,Scanner sc)	{
 /**
  * Process a fund withraw from an account
  * @param theUser the logged-in User object
- * @param sc the Scanner object user for user input
+ * @param sc the Scanner object use for user input
  */
 public static void withdrawFunds(User theUser,Scanner sc)	{
 	
@@ -244,6 +244,11 @@ public static void withdrawFunds(User theUser,Scanner sc)	{
 		
 }
 
+/**
+ * Process of depositing funds to a account
+ * @param theUser logged-in user object
+ * @param sc the Scanner object use for user input
+ */
 public static void depositFunds(User theUser,Scanner sc)	{
 
 	//inits
